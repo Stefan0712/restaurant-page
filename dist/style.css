@@ -1,9 +1,12 @@
 body {
-    background-color: #F7ECDE;
+    background-color: #417D7A;
     margin: 0px;
+    color: white;
+    
 }
+
 .footer{
-    background-color: #E9DAC1;
+    background-color: #1D5C63;
     height: 50px;
     padding: 10px;
     display: flex;
@@ -15,40 +18,45 @@ body {
     grid-template-rows: 1fr 5fr 1fr;
 }
 .header{
-    background-color: #E9DAC1;
+    background-color: #1A3C40;
     height: 125px;
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
     padding-left: 200px;
+    color: white;
 }
 .header a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 30px;
     margin: 5px 30px;
+    cursor: grab;
 }
 .header h1 {
     font-size: 50px;
 }
 .main-contaier{
-    background-color: #FBF8F1;
+    background-color: #1D5C63;
     display: grid;
     grid-template-rows: 3fr 1fr 2fr;
     align-items: center;
     justify-content: center;
 
 }
+
 .reviews{
     margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #FBF8F1;
+    background: #1D5C63;
     height: 300px;
     font-size: 20px;
+    border-radius: 10px;
+
 }
 .description{
     margin: 40px;
@@ -56,11 +64,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #FBF8F1;
+    background: #1D5C63;
     height: 300px;
     text-align: center;
     padding: 50px;
     font-size: 20px;
+    border-radius: 10px;
+
 }
 .gallery{
     margin: 50px;
@@ -76,12 +86,16 @@ body {
     padding: 30px;
     width: 100%;
     height: 920px;
-    background: #FBF8F1;
+    background: #1D5C63;
+    border-radius: 10px;
+
 
 }
 #img-container img {
     height: 900px;
     width: 800px;
+    border-radius: 10px;
+
     
     
 }
@@ -93,6 +107,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: grab;
+
 }
 .arrows:hover{
     background: rgb(250, 250, 250, 0.8);
@@ -103,6 +119,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+
     
 }
 #revAuth{
@@ -111,11 +129,83 @@ body {
 
 .itemContainer {
     background-color: antiquewhite;
-    padding: 20px;
     border: 1px solid white;
     box-shadow: 2px 2px 2px lightgray;
     border-radius: 15px;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 150px;
 
+}
+.itemContainer img {
+    height: 190px;
+    width: 190px;
+    border-radius: 15px;
+
+}
+
+
+.rez-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 100px;
+
+}
+.rez-form input {
+    height: 50px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    margin: 20px;    
+    width: 250px;
+
+    
+}
+.rez-form button{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+}
+.rez-form button:hover{
+    border: 1px solid lightgray;
+}
+.menu-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.about-container{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.about-text{
+    width: 650px;
+}
+.contact-container{
+    height: 100px;
+    margin-top: 50px;
+
+}
+.contact-container > div {
+    margin-top: 20px;
+    font-size: 30px;
 }

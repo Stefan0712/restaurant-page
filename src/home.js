@@ -1,6 +1,13 @@
-import { prepareMenu } from './menu'
+import { createMenu } from './menu'
+import { createRezervations } from './rezervations';
+import { createAbout } from './about';
 
-
+window.createMenu = createMenu;
+window.createRezervations = createRezervations;
+window.createNewHome = createNewHome;
+window.createAbout = createAbout;
+window.nextImg = nextImg;
+window.prevImg = prevImg;
 
 const content = document.getElementById("content");
 
@@ -19,22 +26,25 @@ header.appendChild(headerTitle);
 
 const homeBtn = document.createElement('a');
 homeBtn.setAttribute('id','home');
+homeBtn.setAttribute('onclick', "createNewHome()");
 homeBtn.innerText="Home";
 header.appendChild(homeBtn);
 
 const menuBtn = document.createElement('a');
 menuBtn.setAttribute('id','menu');
 menuBtn.innerText="Menu";
-menuBtn.addEventListener('onclick', prepareMenu());
+menuBtn.setAttribute('onclick', "createMenu()");
 header.appendChild(menuBtn);
 
 const rezBtn = document.createElement('a');
 rezBtn.setAttribute('id','reservations');
+rezBtn.setAttribute('onclick', "createRezervations()");
 rezBtn.innerText="Reservations";
 header.appendChild(rezBtn);
 
 const aboutBtn = document.createElement('a');
 aboutBtn.setAttribute('id','about');
+aboutBtn.setAttribute('onclick', "createAbout()");
 aboutBtn.innerText="About";
 header.appendChild(aboutBtn);
 
@@ -43,6 +53,8 @@ header.appendChild(aboutBtn);
 }
 
 function createMainContainer(){
+    
+
     const mainContainer = document.createElement('div');
     mainContainer.classList.add('main-container');
     content.appendChild(mainContainer);
@@ -120,7 +132,28 @@ function createMainContainer(){
 createHeader();
 createMainContainer();
 
+const img = document.getElementById("currentImg");
+let index = 1;
+function nextImg(){
 
+    if(index<=3){
+        img.setAttribute("src",`./imgs/img${index}.jpg`);
+        index++;
+    } else{
+        index = 1;
+        nextImg();
+    }
+};
+function prevImg(){
+
+    if(index>=1){
+        img.setAttribute("src",`./imgs/img${index}.jpg`);
+        index--;
+    } else{
+        index = 3;
+        prevImg();
+    }
+}; 
 
 
 
@@ -135,5 +168,10 @@ function prepareHome(){
 
     
 } 
+function createNewHome(){
+    const oldMainContainer = document.querySelector(".main-container")
+    oldMainContainer.remove();
+    createMainContainer();
+}
 
-export {prepareHome}
+export {prepareHome, createNewHome, nextImg, prevImg}
